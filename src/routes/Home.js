@@ -27,7 +27,16 @@ function Home() {
             ) : (
                 <div>
                     {movies.map((item) => {
-                        return <Movie item={item} />;
+                        return (
+                            <Movie
+                                key={item.id}
+                                id={item.id}
+                                coverImg={item.medium_cover_image}
+                                title={item.title}
+                                summary={item.summary}
+                                genres={item.genres}
+                            />
+                        );
                     })}
                 </div>
             )}
